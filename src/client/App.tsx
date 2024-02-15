@@ -10,18 +10,15 @@ function App() {
   }, []);
 
   const loadusername = async () => {
-    const userinfo = await fetch(
-      "https://frontendwithexpress.azurewebsites.net/user",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          id: 13,
-        }),
-      }
-    ).then((response) => response.json());
+    const userinfo = await fetch("/user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: 13,
+      }),
+    }).then((response) => response.json());
 
     setUserName(JSON.parse(JSON.stringify(userinfo)).name);
   };
@@ -31,15 +28,12 @@ function App() {
   }, []);
 
   const loadconnection = async () => {
-    const connecitonresults = await fetch(
-      "https://frontendwithexpress.azurewebsites.net/backendconnection",
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    ).then((response) => response.text());
+    const connecitonresults = await fetch("/backendconnection", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((response) => response.text());
 
     console.log(connecitonresults);
   };

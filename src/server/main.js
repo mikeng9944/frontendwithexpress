@@ -7,10 +7,10 @@ import cors from "cors";
 
 const pool = mysql
   .createPool({
-    host: "vpgesgpowerappdb.mysql.database.azure.com",
-    user: "esg",
-    password: "Vpg123!@",
-    database: "towngas-poc-testing",
+    host: "mysql-tg-prd-amagpt-eas-01.mysql.database.azure.com",
+    user: "amagptsqladmin",
+    password: "P@ssw0rd123456",
+    database: "towngas-poc",
     port: 3306,
     ssl: {
       rejectUnauthorized: false,
